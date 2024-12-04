@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "src",
+        "bin"
+    ],
+    "signal": "SIGTERM",
+    "exec": "node --inspect=0.0.0.0:9229 -r ts-node/register ./bin/http/api.ts",
+    "ext": "ts"
+}

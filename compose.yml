@@ -1,0 +1,21 @@
+name: apollo
+
+services:
+  api:
+    build:
+      context: .
+      target: dev
+    working_dir: /app
+    environment:
+      APOLLO__APP__PORT: 3000
+      APOLLO__APP__HOST: http://localhost
+      APOLLO__JWT__SECRET: 123aAxZc&6V!
+      NODE_ENV: development
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    entrypoint: npm run watch
+volumes:
+  node_modules:
